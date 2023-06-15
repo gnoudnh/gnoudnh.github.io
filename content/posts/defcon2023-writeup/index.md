@@ -11,8 +11,6 @@ authors:
   - th3_5had0w
 ---
 
-# DEFCON Quals 2023 
-
 6df5a07fcefb7c636b3f9828784dd561503f05efcd41fdc7bd5b5dbab8637ef7
 
 ## OMG zip
