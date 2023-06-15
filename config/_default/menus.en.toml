@@ -69,7 +69,7 @@
    pageRef = "categories"
    weight = 20
 
-[[footer]]
-   name = "authors"
-   pageRef = "authors"
-   weight = 30
+#[[footer]]
+#   name = "authors"
+#   pageRef = "authors"
+#   weight = 30
