@@ -17,7 +17,7 @@ mainSections = ["posts"]#, "section2"]
 
 disableImageOptimization = false
 
-defaultBackgroundImage = "img/background.jpg" # used as default for background images 
+# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
 # defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
 highlightCurrentMenuArea = true
@@ -47,7 +47,7 @@ smartTOCHideUnfocusedChildren = true
 
 [article]
   showDate = true
-  showViews = false
+  showViews = true
   showLikes = false
   showDateUpdated = false
   showAuthor = true
@@ -81,8 +81,8 @@ smartTOCHideUnfocusedChildren = true
   layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
   showBreadcrumbs = false
   showSummary = false
-  showViews = false
-  showLikes = false
+  showViews = true
+  showLikes = true
   showTableOfContents = false
   showCards = true
   groupByYear = true
@@ -98,8 +98,8 @@ smartTOCHideUnfocusedChildren = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  showViews = false
-  showLikes = fasle
+  showViews = true
+  showLikes = true
   showTableOfContents = true
   cardView = false
 
@@ -107,8 +107,8 @@ smartTOCHideUnfocusedChildren = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  showViews = false
-  showLikes = false
+  showViews = true
+  showLikes = true
   showTableOfContents = true
   groupByYear = false
   cardView = false
