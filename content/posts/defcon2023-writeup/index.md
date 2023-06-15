@@ -188,7 +188,7 @@ Flag: `flag{time_to_relax_and_decompress}`
 
 A brief look through the main function let me know that this is definitely a heap-note challenge.
 
-```cpp=
+```cpp
 ...
 if ( (*(_BYTE *)(&off_3114 + 151) & 1) != 0 )
       fputs("c|v|m|d|q> ", stdout);
@@ -245,7 +245,7 @@ struct vjp {
 
 The first bug spotted is data-concatenation bug which gives us a data leak primitive, in the create function the program allows us to input 1024 maximum bytes into `s` buffer, but when the data length exceeds 512 the program will copy 512 from buffer `s` to the note's buffer, the problem is the fd pointer is adjacent to the note's 512-byte-buffer, abusing this will gives us a heap leak.
 
-```cpp=
+```cpp
 === create ===
 ...
 result = fgets(s, 1024, stdin);
@@ -269,7 +269,7 @@ result = fgets(s, 1024, stdin);
 
 The bug is pretty easy and it existed in the modify note functionality of the program.
 
-```cpp=
+```cpp
 char *modify()
 {
   char *result; // eax
@@ -304,7 +304,7 @@ Classical buffer overflow right? the data_buf gets 528 bytes in so the fd and bk
 
 ### Exploit
 
-```python=
+```python
 from pwn import *
 from time import sleep
 
@@ -447,7 +447,7 @@ We are given an elf binary which could verify a binary using a secret key file a
 
 The logic in `main` is quite easy, if `argc == 2` then binary and hashes file are readen from input, if `argc == 4` then read files from submited file name. After the pre processing, the binary will be verified with the key by calling `verify_binary` function, if success than the binary will be execved
 
-```c!
+```c
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   const char *v3; // r15
@@ -517,7 +517,7 @@ LABEL_14:
 
 I'm kinda lazy to analyse every line of code in `verify_binary` function so here is the python implement to sign a binary 
 
-```python!
+```python
 import sys
 import hashlib
 
@@ -592,7 +592,7 @@ Since Sha256 didn't have any known collision attack and all header, program head
 
 The problem is each section have a different salt base on its index. Unless we find a way that make 2 seciont have the same salt, we will dumb. Luckly, we can trick the binary to use the salt we want. Here is the code from `get_salt` fuction:
 
-```c!
+```c
 char *__fastcall get_salt(char *src, FILE *stream, unsigned __int8 a3)
 {
   char *v4; // rbx
@@ -645,7 +645,7 @@ char *__fastcall get_salt(char *src, FILE *stream, unsigned __int8 a3)
 
 And the code that update the salt to the hash digest from calulate hash fuction
 
-```c!
+```c
   if ( salt )
   {
     salt_len = strlen(salt);
@@ -807,7 +807,7 @@ with open('./exploit/sus.txt', "w") as f:
 
 Script to send our exploit payload:
 
-```python!
+```python
 from pwn import *
 
 # Set up pwntools for the correct architecture
@@ -865,7 +865,7 @@ io.interactive()
 
 Server had been down so here is the local output:
 
-```
+```!
 [wsl]code/2023/DEFCON/DEFCON_CTF_2023_Qualifiers/seedling [🐍 v3.10.6]
 :) python solve.py LOCAL
 [*] '/mnt/d/code/2023/DEFCON/DEFCON_CTF_2023_Qualifiers/seedling/src/verify'
@@ -1021,7 +1021,7 @@ The flag is at `/flag'.
 
 Handouts:
 
-```py=
+```python
 # This file is for demonstration purposes only and is not exactly the same as the service that we run
 import shutil
 import subprocess
@@ -1246,7 +1246,7 @@ if __name__ == "__main__":
     main()
 ```
 
-```c=
+```c
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -1602,7 +1602,7 @@ disassembler(dump)
 
 And here after decompiled:
 
-```asm!
+```asm
 0x0000: unkown op 42 0x0, 0x0, 0x0
 0x001d: unkown op 41 0x0, 0x0, 0x0
 0x003a: unkown op 40 0x0, 0x0, 0x0
@@ -1722,7 +1722,7 @@ At least we know that is encrypted load at the first memory and continuous, so w
 
 Here is code for solve binary 0:
 
-```python!
+```python
 def get_enc(bytecodes, n=16):
     enc = []
     for i in range(n):
@@ -1756,7 +1756,7 @@ The challenge name is "nlink", so we determine that our input is 8 bytes result 
 
 So to automate all things, we need to write a TEA_Decrypt, so we wrote this code:
 
-```python!
+```python
 def xtea_dec(b, k):
     # https://code.activestate.com/recipes/496737-python-xtea-encryption/
     def decrypt(block, key):
@@ -1791,7 +1791,7 @@ def decrypt_bytecodes(msg, key):
 
 Which mean, we need to decrypt our bytecodes before disassembly:
 
-```python!
+```python
 with open('output/0','rb') as f:
   f.seek(0x3219)
   dump0 = f.read(11432)
@@ -1808,7 +1808,7 @@ disassembler(dump1)
 
 Here is result:
 
-```asm!
+```asm
 0x0000: unkown op 42 0x0, 0x0, 0x0
 0x001d: unkown op 41 0x0, 0x0, 0x0
 0x003a: unkown op 40 0x0, 0x0, 0x0
@@ -2019,7 +2019,7 @@ Result: `b'\x00\x00\x80\x01\x00\x00\xf1\x00'`
 
 helper.py script
 
-```python!
+```python
 import struct
 import os
 from functools import cache
@@ -2110,7 +2110,7 @@ solve_func = [solve_xor, solve_rot, solve_transform]
 
 Solve scipt for part A:
 
-```python!
+```python
 from pwn import process
 from helper import *
 
@@ -2150,7 +2150,7 @@ Image a:
 
 Binary for part B is the binary that that md5sum of itself is the name. Opcode had been changed but the logic is the same so we will need to find the path and solve like path A. Also we don't know the entry binary so we have to bruteforce it since we know the entry's bytecodes will not be encrypted.
 
-```python!
+```python
 from helper import *
 
 suffix = bytes.fromhex('020000000000')
@@ -2177,7 +2177,7 @@ When we know the entry, solving for the password to get the id and than we just 
 
 Solve script for part B (multithread for speed up the process):
 
-```python!
+```python
 import json
 from helper import *
 from pwn import process, log
