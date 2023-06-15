@@ -6,11 +6,6 @@
   weight = 10
 
 [[main]]
-  name = "Tags"
-  pageRef = "tags"
-  weight = 10
-
-[[main]]
   name = "GitHub"
   url = "https://github.com/th3-5had0w"
   weight = 40
@@ -20,11 +15,11 @@
 # the copyright notice. Configure as per the main menu above.
 
 [[footer]]
-  name = "Tags"
-  pageRef = "tags"
+  name = "Categories"
+  pageRef = "categories"
   weight = 10
 
 [[footer]]
-  name = "GitHub"
-  url = "https://github.com/th3-5had0w"
-  weight = 40
+  name = "Tags"
+  pageRef = "tags"
+  weight = 10
