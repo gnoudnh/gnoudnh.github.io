@@ -47,7 +47,7 @@ smartTOCHideUnfocusedChildren = true
 
 [article]
   showDate = true
-  showViews = true
+  showViews = false
   showLikes = false
   showDateUpdated = false
   showAuthor = true
@@ -81,8 +81,8 @@ smartTOCHideUnfocusedChildren = true
   layoutBackgroundHeaderSpace = false # only used when heroStyle equals background
   showBreadcrumbs = false
   showSummary = false
-  showViews = true
-  showLikes = true
+  showViews = false
+  showLikes = false
   showTableOfContents = false
   showCards = true
   groupByYear = true
