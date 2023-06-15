@@ -14,7 +14,7 @@ showWordCount : false
 showSummary : false
 sharingLinks : false
 showEdit: false
-showViews: true
+showViews: false
 showLikes: false
 showAuthor: true
 layoutBackgroundHeaderSpace: false
@@ -22,4 +22,4 @@ layoutBackgroundHeaderSpace: false
 
 ---
 
-Hi, I love solving computer security related problems and low-level programming. I also play CTF.
+Hi, I love solving computer security related problems and low-level programming. I also play CTF. Interested in Reverse/Pwnable, currently playing [@The Council of Sheep](https://ctftime.org/team/221828)
