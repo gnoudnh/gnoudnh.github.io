@@ -22,4 +22,4 @@ layoutBackgroundHeaderSpace: false
 
 ---
 
-Hi, I'm th3_5had0w from The Vietnamese Gang, I love solving computer security related problems and low-level programming. I also play CTF. Interested in Reverse/Pwnable, currently playing [@The Council of Sheep](https://ctftime.org/team/221828)
+Hi, I'm th3_5had0w from [The Vietnamese Gang](https://www.youtube.com/watch?v=zUjZlxhDzHE), I love solving computer security related problems and low-level programming. I also play CTF. Interested in Reverse/Pwnable, currently playing [@The Council of Sheep](https://ctftime.org/team/221828)
