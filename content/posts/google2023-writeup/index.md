@@ -1,5 +1,5 @@
 ---
-title: "UBF - Google CTF 2023"
+title: "Google CTF 2023"
 description: "Google CTF 2023 Pwnable Writeup"
 summary: "Google CTF 2023 Pwnable Writeup"
 categories: ["Writeup"]
