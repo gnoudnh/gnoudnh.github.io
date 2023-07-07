@@ -5,7 +5,7 @@ summary: "pointy challenge picoCTF 2019 writeup"
 categories: ["Writeup"]
 tags: ["Pwnable"]
 #externalUrl: ""
-date: 2023-03-10
+date: 2021-03-10
 draft: false
 authors:
   - th3_5had0w
