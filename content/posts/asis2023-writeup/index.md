@@ -1,5 +1,5 @@
 ---
-title: "NIGHTJS ASIS CTF 2023 - A small study on Serenity OS interpreter"
+title: "NIGHTJS ASIS CTF 2023 - A small study on Serenity OS's JS interpreter"
 description: "NIGHTJS ASIS CTF 2023 Writeup"
 summary: "NIGHTJS ASIS CTF 2023 Writeup"
 categories: ["Writeup"]
