@@ -23,3 +23,5 @@ layoutBackgroundHeaderSpace: false
 ---
 
 Hi, I'm th3_5had0w from [The Vietnamese Gang](https://www.youtube.com/watch?v=zUjZlxhDzHE), I love solving computer security related problems and low-level programming. I also play CTF. Interested in Reverse/Pwnable, currently playing [@The Council of Sheep](https://ctftime.org/team/221828)
+
+[Xin chào bn nhỏ... Hacker? An toàn thông tin?](https://vnhacker.blogspot.com/2012/05/lam-toan-thong-tin-thi-hoc-gi.html)
